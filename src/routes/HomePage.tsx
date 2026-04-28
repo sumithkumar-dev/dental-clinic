@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import { Phone, CalendarDays, Star, Award, Users, Sparkles, ShieldCheck, HeartPulse, Clock, ArrowRight, MapPin } from "lucide-react";
 import { CLINIC } from "@/lib/clinic";
 import { TREATMENTS } from "@/lib/treatments";
@@ -131,14 +130,9 @@ export default function HomePage() {
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {TREATMENTS.map((t) => (
               <article key={t.slug} className="group rounded-2xl bg-card border border-border p-7 shadow-soft hover:shadow-card hover:-translate-y-1 transition-all">
-                <div className="h-14 w-14 rounded-2xl overflow-hidden shadow-soft group-hover:scale-110 transition-transform">
-				<img
-				src={t.image}
-				alt={t.title}
-				className="w-full h-full object-cover"
-				loading="lazy"
-				/>
-				</div>
+                <div className="h-14 w-14 rounded-2xl bg-gradient-brand grid place-items-center text-primary-foreground shadow-soft group-hover:scale-110 transition-transform">
+                  <t.icon className="h-7 w-7" />
+                </div>
                 <h3 className="mt-5 text-xl font-bold text-foreground">{t.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{t.description}</p>
                 <div className="mt-5 flex items-end justify-between pt-4 border-t border-border">
